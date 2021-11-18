@@ -1,0 +1,33 @@
+{
+  "name": "sequilize_nodejs_layered_architechture",
+  "version": "1.0.0",
+  "description": "Node.js Rest Apis with Express, Sequelize, MySQL & Layered Architechture",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "sequelize",
+    "mysql",
+    "rest",
+    "api",
+    "architechture"
+  ],
+  "author": "Sajid Mahboob",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
