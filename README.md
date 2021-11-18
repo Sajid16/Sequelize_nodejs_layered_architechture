@@ -1,0 +1,1 @@
+# Sequelize_nodejs_layered_architechture
