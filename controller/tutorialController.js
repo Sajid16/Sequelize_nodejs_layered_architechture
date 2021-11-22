@@ -1,14 +1,21 @@
-const db = require("../models"); // models path depend on your structure
-const Tutorial = db.tutorials;
+const tuorialServ = require("../service/implementation/tutorialService.js");
 
 class TutorialController {
+    let _tutorialService;
 
     constructor() {
-
+        this._tutorialService = new tuorialServ.tutorialService();
     }
 
-    static getAllTutorial(req, res) {
-        console.log(req.body);
+    getAll(req, res) {
+        let test = _tutorialService.getAllTutorial(req.body);
+        return res.status(200).json({
+            data: test
+        });
+        // console.log(req.body);
+        // return res.status(200).json({
+        //     data: req.body
+        // });
         // const title = req.query.title;
         // var condition = title ? {
         //     title: {

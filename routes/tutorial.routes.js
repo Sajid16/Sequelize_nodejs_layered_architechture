@@ -1,10 +1,11 @@
 module.exports = app => {
     const tutorials = require("../controller/tutorialController.js");
+    const tutorialControllerClass = new tutorials.TutorialController();
 
     var router = require("express").Router();
 
     // Create a new Tutorial
-    router.post("/", tutorials.TutorialController.getAllTutorial);
+    router.post("/", tutorialControllerClass.getAll);
 
     // // Retrieve all Tutorials
     // router.get("/", tutorials.findAll);
