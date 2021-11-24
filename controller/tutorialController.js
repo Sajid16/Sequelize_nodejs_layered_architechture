@@ -1,14 +1,20 @@
 const tuorialServ = require("../service/implementation/tutorialService.js");
 
 class TutorialController {
-    let _tutorialService;
+    // _tutorialService;
 
     constructor() {
+        // console.log('inside cons');
+        // console.log(this._tutorialService);
         this._tutorialService = new tuorialServ.tutorialService();
     }
 
     getAll(req, res) {
-        let test = _tutorialService.getAllTutorial(req.body);
+        console.log(this._tutorialService);
+        console.log('inside getall');
+        console.log(req.body);
+        let test = this._tutorialService.getAllTutorial(req.body);
+        console.log('after test');
         return res.status(200).json({
             data: test
         });

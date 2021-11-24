@@ -1,5 +1,6 @@
 class tutorialService {
-    // let _dbContext, _TutorialModel;
+    static _dbContext;
+    static _TutorialModel;
 
     constructor() {
         this._dbContext = require("../../models"); // models path depend on your structure
@@ -7,6 +8,7 @@ class tutorialService {
     }
 
     getAllTutorial(inputData) {
+        console.log(inputData);
         inputData["test"] = "done";
         return inputData;
     }
