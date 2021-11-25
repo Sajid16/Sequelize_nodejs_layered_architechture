@@ -10,7 +10,8 @@ class TutorialController {
     }
 
     getAll(req, res) {
-        console.log(this._tutorialService);
+        let _tutorialService = new tuorialServ.tutorialService();
+        console.log(_tutorialService);
         console.log('inside getall');
         console.log(req.body);
         let test = this._tutorialService.getAllTutorial(req.body);
