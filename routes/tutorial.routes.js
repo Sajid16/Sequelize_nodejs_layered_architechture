@@ -1,23 +1,3 @@
-// const tutorials = require("../controller/tutorialController.js");
-
-// class tutorialRoute {
-//     constructor() {
-//         this.tutorialControllerClass = new tutorials.TutorialController();
-//         this.router = require("express").Router();
-//     }
-
-//     Route() {
-//         this.router.post("/", tutorialControllerClass.getAll);
-//     }
-
-// }
-
-// module.exports = {
-//     tutorialRoute
-// }
-
-
-
 module.exports = app => {
     const tutorials = require("../controller/tutorialController.js");
     const tutorialControllerClass = new tutorials.TutorialController();

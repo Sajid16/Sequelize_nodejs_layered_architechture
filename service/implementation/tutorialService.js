@@ -28,7 +28,6 @@ class tutorialService {
 
 
     async createTutorial(inputData) {
-
         // Validate request
         if (!inputData.title) {
             res.status(400).send({
