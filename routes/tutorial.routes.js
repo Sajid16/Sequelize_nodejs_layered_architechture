@@ -1,11 +1,34 @@
+// const tutorials = require("../controller/tutorialController.js");
+
+// class tutorialRoute {
+//     constructor() {
+//         this.tutorialControllerClass = new tutorials.TutorialController();
+//         this.router = require("express").Router();
+//     }
+
+//     Route() {
+//         this.router.post("/", tutorialControllerClass.getAll);
+//     }
+
+// }
+
+// module.exports = {
+//     tutorialRoute
+// }
+
+
+
 module.exports = app => {
     const tutorials = require("../controller/tutorialController.js");
     const tutorialControllerClass = new tutorials.TutorialController();
 
     var router = require("express").Router();
 
+    // Retrieve all Tutorials
+    router.get("/", tutorialControllerClass.getAll);
+
     // Create a new Tutorial
-    router.post("/", tutorialControllerClass.getAll);
+    router.post("/", tutorialControllerClass.createTutorial);
 
     // // Retrieve all Tutorials
     // router.get("/", tutorials.findAll);
@@ -13,8 +36,8 @@ module.exports = app => {
     // // Retrieve all published Tutorials
     // router.get("/published", tutorials.findAllPublished);
 
-    // // Retrieve a single Tutorial with id
-    // router.get("/:id", tutorials.findOne);
+    // Retrieve a single Tutorial with id
+    router.get("/:id", tutorialControllerClass.getById);
 
     // // Update a Tutorial with id
     // router.put("/:id", tutorials.update);
