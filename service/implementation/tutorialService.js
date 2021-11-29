@@ -65,6 +65,49 @@ class tutorialService {
             });
         return Response;
     }
+
+
+    async updateTutorial(inputParam, inputData) {
+        const id = inputParam.id;
+
+        let Response = await this._TutorialModel.update(inputData, {
+                where: {
+                    id: id
+                }
+            })
+            .then(num => {
+                if (num == 1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            })
+            .catch(err => {
+                return false;
+            });
+        return Response;
+    }
+
+
+    async deleteTutorial(id) {
+
+        let Response = await this._TutorialModel.destroy({
+                where: {
+                    id: id
+                }
+            })
+            .then(num => {
+                if (num == 1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            })
+            .catch(err => {
+                return false;
+            });
+        return Response;
+    }
 }
 
 module.exports = {
