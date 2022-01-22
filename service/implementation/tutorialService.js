@@ -7,6 +7,7 @@ class tutorialService {
     }
 
     async getAllTutorial(inputParams) {
+        this.#privateTestMethod();
         const title = inputParams.title;
         var condition = title ? {
             title: {
@@ -107,6 +108,10 @@ class tutorialService {
                 return false;
             });
         return Response;
+    }
+
+    #privateTestMethod(){
+        console.log("test private");
     }
 }
 

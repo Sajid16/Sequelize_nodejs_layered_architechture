@@ -3,7 +3,7 @@ module.exports = {
     get: {
         tags: ["Tutorials"], // operation's tag.
         description: "Get Tutorial By Id", // operation's desc.
-        operationId: "getTutorials", // unique operation id.
+        operationId: "getTutorialsById", // unique operation id.
         parameters: [
             // expected params.
             {
