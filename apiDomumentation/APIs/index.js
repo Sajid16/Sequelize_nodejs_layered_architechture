@@ -1,4 +1,5 @@
 const getTutorials = require('./getTutorials');
+const getTests = require('./getTests');
 const getTutorialById = require('./getTutorialById');
 const createTutorials = require('./createTutorials');
 const updateTutorial = require('./updateTutorial');
@@ -14,6 +15,9 @@ module.exports = {
             ...getTutorialById,
             ...updateTutorial,
             ...deleteTutorial
-        }
+        },
+        '/api/tests':{
+            ...getTests
+        },
     }
 }
