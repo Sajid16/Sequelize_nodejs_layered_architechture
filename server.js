@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require('dotenv').config();
 const app = express();
+const docs = require('./apiDomumentation');
+const swaggerUI = require("swagger-ui-express");
 
 try {
     const db = require("./models");
@@ -33,6 +35,11 @@ app.get("/", (req, res) => {
         message: "Welcome to sequelize & layered architechture application."
     });
 });
+
+// route for swagger open-api documentation
+app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(docs));
+// route for swagger open-api documentation
+
 require("./routes/tutorial.routes")(app);
 
 // set port, listen for requests
